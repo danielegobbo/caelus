@@ -1,0 +1,17 @@
+{
+  "source": "https://kandengues-smile-studio.lovable.app",
+  "pages": [
+    "/",
+    "/blog",
+    "/contacto",
+    "/faq",
+    "/galeria",
+    "/medicos",
+    "/privacidade",
+    "/servicos",
+    "/sobre",
+    "/termos"
+  ],
+  "files": 54,
+  "failures": []
+}
