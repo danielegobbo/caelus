@@ -1,50 +1,25 @@
-# Dentista para Kandengues — sito statico
+# Dentista para Kandengues — copia esatta
 
-Ricostruzione locale del sito <https://kandengues-smile-studio.lovable.app/>
-(clinica di odontopediatria a Luanda), convertito da app React/Lovable in un sito
-statico HTML + CSS + JavaScript vanilla. Non serve nessun build né Node.js.
+Copia esatta del sito pubblicato <https://kandengues-smile-studio.lovable.app/>:
+HTML delle 10 pagine, JavaScript e CSS compilati, immagini, favicon, `robots.txt`
+e `sitemap.xml`, scaricati senza modifiche (stessi nomi e stessi byte).
 
 ## Avvio
 
-Apri `index.html` direttamente nel browser, oppure servi la cartella con un server statico:
+Fai doppio clic su `avvia.cmd`, oppure esegui:
 
 ```sh
-python -m http.server 8000
-# poi apri http://localhost:8000
+python serve.py        # poi apri http://localhost:8080
 ```
 
-## Struttura
-
-```
-index.html          Home
-sobre.html          Sobre nós
-servicos.html       Serviços
-medicos.html        Médicos
-galeria.html        Galeria (con lightbox)
-blog.html           Blog
-contacto.html       Contacto
-faq.html            FAQ (accordion)
-privacidade.html    Política de Privacidade
-termos.html         Termos e Condições
-favicon.png
-assets/
-  css/styles.css    CSS Tailwind compilato dell'originale (non modificare a mano)
-  css/site.css      Stili aggiuntivi: lightbox, toast, reduced-motion
-  js/main.js        Interattività (sostituisce React)
-  img/              Immagini
-```
-
-## Cosa fa `main.js`
-
-- animazioni di comparsa allo scroll (`[data-reveal]`) e contatori animati (`[data-count]`)
-- header compatto dopo lo scroll, menu mobile, pulsante "torna su"
-- banner cookie (memorizzato in `localStorage` con la chiave `dpk-cookies`)
-- lightbox della galleria, accordion della FAQ, newsletter con messaggio di conferma
+Serve Python 3. Non aprire `index.html` direttamente dal disco: le pagine usano
+percorsi assoluti (`/assets/...`) e moduli JavaScript, che funzionano solo via HTTP.
 
 ## Note
 
-- `styles.css` contiene solo le classi Tailwind usate dall'originale. Se aggiungi
-  classi Tailwind nuove all'HTML, non avranno effetto: scrivi il CSS in `site.css`.
-- La newsletter non invia dati da nessuna parte (come nell'originale): mostra solo la conferma.
-- Contenuti da verificare con la clinica: le urgenze sono indicate "solo la domenica",
-  mentre l'orario dichiarato è lunedì–sabato.
+- Sono file compilati, non il progetto sorgente React/TypeScript di Lovable:
+  per modificarli comodamente serve l'export del progetto da Lovable.
+- Le pagine includono gli script di analytics dell'hosting Lovable (`/~flock.js`,
+  `/__l5e/...`): in locale non trovano il servizio e vengono ignorati.
+- Google Fonts, mappe, WhatsApp e social richiedono Internet.
+- `serve.py`, `avvia.cmd` e questo README non fanno parte del sito.

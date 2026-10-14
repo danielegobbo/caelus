@@ -1,0 +1,1 @@
+var e=`/assets/clinic-B_DDlqrm.jpg`,t=`/assets/gallery-kids-DKAOrqri.jpg`;export{e as n,t};
